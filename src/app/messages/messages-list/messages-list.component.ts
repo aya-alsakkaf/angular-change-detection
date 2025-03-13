@@ -5,7 +5,7 @@ import { AsyncPipe } from '@angular/common';
 @Component({
   selector: 'app-messages-list',
   standalone: true,
-  imports: [AsyncPipe],
+  // imports: [AsyncPipe],
   templateUrl: './messages-list.component.html',
   styleUrl: './messages-list.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -16,7 +16,8 @@ export class MessagesListComponent {
   // messages = this.messageSerivce.allMessages
 
   private messageSerivce = inject(MessagesService)
-  messages$ = this.messageSerivce.messages$;
+  // messages$ = this.messageSerivce.messages$;
+  messages = this.messageSerivce.allMessages;
 
   get debugOutput() {
     console.log('[MessagesList] "debugOutput" binding re-evaluated.');
